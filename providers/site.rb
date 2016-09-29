@@ -68,7 +68,7 @@ action :create do
     program ::File.join(node['oauth2_proxy']['install_path'],'oauth2_proxy')
     args [ "-config=#{oauth2_proxy_cfg_path}" ]
     description "oauth2_proxy for #{new_resource.name}"
-    notifies :reload, "service[oauth2_proxy-#{new_resource.name}]", :delayed
+    notifies :restart, "service[oauth2_proxy-#{new_resource.name}]"
     action :create
   end
 
