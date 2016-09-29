@@ -7,8 +7,8 @@
 # Source:: https://github.com/orion-cookbooks/oauth2_proxy
 #
 
-default['oauth2_proxy']['install_url'] = 'https://github.com/bitly/oauth2_proxy/releases/download/v2.0.1/oauth2_proxy-2.0.1.linux-amd64.go1.4.2.tar.gz'
-default['oauth2_proxy']['checksum'] = 'c6d8f6d74e1958ce1688f3cf7d60648b9d0d6d4344d74c740c515a00b4e023ad'
-default['oauth2_proxy']['install_path'] = '/usr/local/oauth2_proxy'
+default['oauth2_proxy']['install_url']  = 'https://github.com/bitly/oauth2_proxy/releases/download/v2.1/oauth2_proxy-2.1.linux-amd64.go1.6.tar.gz'
+default['oauth2_proxy']['checksum']     = '3061e5b04bd14eeb9ec0ad1c9b324ba8d99d50eaadc5f528cdf4d21043828298'
 
+default['oauth2_proxy']['install_path'] = '/usr/local/oauth2_proxy'
 default['oauth2_proxy']['config_files'] = '/etc/oauth2_proxy/'
