@@ -45,6 +45,8 @@ def generate_cfg_hash
   }
 end
 
+use_inline_resources
+
 action :create do
   require 'toml'
 
@@ -66,6 +68,7 @@ action :create do
     program ::File.join(node['oauth2_proxy']['install_path'],'oauth2_proxy')
     args [ "-config=#{oauth2_proxy_cfg_path}" ]
     description "oauth2_proxy for #{new_resource.name}"
+    notifies :restart, "service[oauth2_proxy-#{new_resource.name}]"
     action :create
   end
 
@@ -84,6 +87,7 @@ action :delete do
 
   pleaserun "oauth2_proxy-#{new_resource.name}" do
     name "oauth2_proxy-#{new_resource.name}"
+    notifies :stop, "service[oauth2_proxy-#{new_resource.name}]", :immediately
     action :delete
   end
 

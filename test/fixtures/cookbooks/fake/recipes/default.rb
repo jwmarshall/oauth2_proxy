@@ -6,4 +6,5 @@ oauth2_proxy_site 'default' do
   client_secret 'super_secret_secret'
   cookie_secret 'stroopwafel'
   upstreams [ 'http://localhost' ]
+  email_domains [ 'localhost' ]
 end
